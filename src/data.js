@@ -17,12 +17,14 @@ let data = {
         {
           id: "3",
           name: "Counter",
-          counter: 0
+          counter: 0,
+          children: []
         },
         {
           id: "4",
           name: "Counter",
-          counter: 0
+          counter: 0,
+          children: []
         }
       ]
     },
@@ -34,12 +36,14 @@ let data = {
         {
           id: "6",
           name: "Counter",
-          counter: 0
+          counter: 0,
+          children: []
         },
         {
           id: "7",
           name: "Counter",
-          counter: 0
+          counter: 0,
+          children: []
         }
       ]
     }

@@ -4,7 +4,7 @@ import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 
 import React from "react";
-import { increment } from "./actions/index";
+import { increment, addChild } from "./actions/index";
 const mapStateToProps = (state) => {
   console.log("mapStateToProps", state);
   console.log("mapStateToProps1", state);
@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     increment: (id) => {
       //console.log("zxc", id, counter);
       dispatch(increment(id));
+    },
+    addChild: (id) => {
+      dispatch(addChild(id));
     }
   };
 };
@@ -37,6 +40,11 @@ const App = (props) => {
     props.increment({
       id: id,
       counter: counter
+    });
+  };
+  const addChild = (id) => {
+    props.addChild({
+      id: id
     });
   };
   //const dispatch = useDispatch();
@@ -66,7 +74,14 @@ const App = (props) => {
             <a href="#" style={{ color: "black", textDecoration: "none" }}>
               ×
             </a>
-            <a href="#">Add child</a>
+            <a
+              href="#"
+              onClick={() => {
+                addChild(nodes.id);
+              }}
+            >
+              Add child
+            </a>
           </div>
         }
         counter={nodes.counter}
